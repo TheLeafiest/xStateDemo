@@ -5,7 +5,7 @@ export default createMachine(
   {
     initial: "idle",
     context: {
-      result: undefined,
+      result: undefined as string | undefined,
       fields: reactive({
         firstName: undefined,
         lastName: undefined,
@@ -41,6 +41,7 @@ export default createMachine(
           `${context.fields.firstName} ${context.fields.lastName}`,
       }),
       resetResult: assign({
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         result: (context) => undefined,
       }),
       resetForm: (context) => {

@@ -98,6 +98,7 @@ export default createMachine(
         loginAttempts: (context) => context.loginAttempts + 1,
       }),
       resetLoginAttempts: assign({
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         loginAttempts: (context) => 0,
       }),
     },
